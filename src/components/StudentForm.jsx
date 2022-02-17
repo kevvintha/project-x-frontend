@@ -7,8 +7,8 @@ class StudentForm extends Component {
         super(props);
         this.state = {
             id: props.customer.id,
-            username: props.customer.username,
-            password: props.customer.password,
+            username: props.customer.customerUsername,
+            password: props.customer.customerPassword,
             firstName: props.customer.firstName,
             lastName: props.customer.lastName
         };
