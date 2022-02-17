@@ -6,12 +6,11 @@ class StudentForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: props.student.id,
-            firstName: props.student.firstName,
-            lastName: props.student.lastName,
-            email: props.student.email,
-            imagePath: props.student.imagePath,
-            department: props.student.department
+            id: props.customer.id,
+            username: props.customer.username,
+            password: props.customer.password,
+            firstName: props.customer.firstName,
+            lastName: props.customer.lastName
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,18 +47,13 @@ class StudentForm extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label >email:</label>
-                            <input type="text" name="email" className="form-control" id="email" value={this.state.email} onChange={this.handleChange} required />
+                            <label >Username:</label>
+                            <input type="text" name="email" className="form-control" id="username" value={this.state.username} onChange={this.handleChange} required />
                         </div>
 
                         <div className="form-group">
-                            <label >Department:</label>
-                            <input type="text" name="department" className="form-control" id="department" value={this.state.department} onChange={this.handleChange} required />
-                        </div>
-
-                        <div className="form-group">
-                            <label >Image URL:</label>
-                            <input type="text" name="imagePath" className="form-control" id="imagePath" value={this.state.imagePath} onChange={this.handleChange} required />
+                            <label >Password:</label>
+                            <input type="text" name="department" className="form-control" id="password" value={this.state.password} onChange={this.handleChange} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-primary" />
