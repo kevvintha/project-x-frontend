@@ -16,15 +16,13 @@ const SiteNav = (props) => {
 
   return (
     <Navbar bg="dark" variant="dark" sticky='top'>
-      <Navbar.Brand href="#home">School for Pets</Navbar.Brand>
+      <Navbar.Brand href="#home">Marketplace</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#">Home</Nav.Link>
-        <Nav.Link href="#">Pets by Type</Nav.Link>
-        <Nav.Link href="#">Pets By Locatin</Nav.Link>
       </Nav>
       <FormModal type ='create'/>
       <Form inline onSubmit={handleSearch}>
-        <FormControl  type="text" placeholder="Search our Student Pets" className="mr-sm-2" onChange={e=>setSearchValue(e.target.value)} />
+        <FormControl  type="text" placeholder="Search products" className="mr-sm-2" onChange={e=>setSearchValue(e.target.value)} />
         <Button variant="outline-info" type='submit'>Search</Button>
       </Form>
     </Navbar>
