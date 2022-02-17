@@ -35,6 +35,12 @@ class StudentForm extends Component {
                     {this.state.id && <h3>{'Changes for ' + this.state.firstName + ' ' + this.state.lastName}</h3>}
                     <form onSubmit={this.handleSubmit}>
                         <div className='row d-inline-flex'>
+
+                        <div className="form-group col">
+                                <label >Customer ID:</label>
+                                <input type="text" name="id" className="form-control" id="id" value={this.state.id} onChange={this.handleChange} required />
+                            </div>
+
                             <div className="form-group col">
                                 <label >First Name:</label>
                                 <input type="text" name="firstName" className="form-control" id="firstName" value={this.state.firstName} onChange={this.handleChange} required />

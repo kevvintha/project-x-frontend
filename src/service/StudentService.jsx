@@ -56,8 +56,8 @@ export function updateCustomer(customer) {
   return axios.put(`${baseurl}/api/update/customer`, customer);
 }
 
-export function deleteCustomer(customerId) {
-  return axios.delete(`${baseurl}/api/delete/customer/` + customerId);
+export function deleteCustomer(id) {
+  return axios.delete(`${baseurl}/api/customer/delete/` + id);
 }
 
 
