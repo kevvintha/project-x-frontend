@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import StudentForm from './StudentForm';
-import { createStudent } from '../service/StudentService';
+import { createCustomer } from '../service/StudentService';
 
 const FormModal = (props) => {
   const [show, setShow] = useState(false);
@@ -10,21 +10,21 @@ const FormModal = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  var student, buttonColor, buttonText, crudFunction;
+  var customer, buttonColor, buttonText, crudFunction;
 
   // Switch Allows Modal Reuse for Update and Create
   switch (type) {
     case 'create':
       buttonColor = 'primary';
       buttonText = type.toString().toUpperCase();
-      crudFunction = (student) => { createStudent(student); }
-      student = {};
+      crudFunction = (customer) => { createCustomer(customer); }
+      customer = {};
       break;
     case 'update':
       buttonColor = 'warning';
       buttonText = type.toString().toUpperCase();
       crudFunction = props.handleUpdate;
-      student = props.student;
+      customer = props.customer;
       break;
     default:
   }
@@ -37,9 +37,9 @@ const FormModal = (props) => {
 
       <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Header closeButton>
-          <Modal.Title>{buttonText + ' Student'}</Modal.Title>
+          <Modal.Title>{buttonText + ' Customer'}</Modal.Title>
         </Modal.Header>
-        <Modal.Body><StudentForm student={student} handleCrud={crudFunction} /></Modal.Body>
+        <Modal.Body><StudentForm customer={customer} handleCrud={crudFunction} /></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

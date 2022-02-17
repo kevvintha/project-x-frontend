@@ -53,7 +53,7 @@ class StudentForm extends Component {
 
                         <div className="form-group">
                             <label >Password:</label>
-                            <input type="text" name="department" className="form-control" id="password" value={this.state.password} onChange={this.handleChange} required />
+                            <input type="password" name="department" className="form-control" id="password" value={this.state.password} onChange={this.handleChange} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-primary" />

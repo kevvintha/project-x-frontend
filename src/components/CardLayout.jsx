@@ -35,7 +35,7 @@ function CardLayout(props) {
       {data && data.length > 0 &&
         makeDecks(data, 4).map((deck, idx) => (
           <div key={idx} className='card-deck container-fluid pt-3 row'>
-            {deck.map((student, idx) => <Card key={student.id} info={student} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />)}
+            {deck.map((customer, idx) => <Card key={customer.id} info={customer} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />)}
           </div>))
       }
       {data && !Array.isArray(data) && data['firstName'] !== 'N/A' &&
