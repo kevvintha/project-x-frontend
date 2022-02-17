@@ -48,12 +48,12 @@ class StudentForm extends Component {
 
                         <div className="form-group">
                             <label >Username:</label>
-                            <input type="text" name="email" className="form-control" id="username" value={this.state.username} onChange={this.handleChange} required />
+                            <input type="text" name="customerUsername" className="form-control" id="customerUsername" value={this.state.customerUsername} onChange={this.handleChange} required />
                         </div>
 
                         <div className="form-group">
                             <label >Password:</label>
-                            <input type="password" name="department" className="form-control" id="password" value={this.state.password} onChange={this.handleChange} required />
+                            <input type="password" name="customerPassword" className="form-control" id="customerPassword" value={this.state.customerPassword} onChange={this.handleChange} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-primary" />
