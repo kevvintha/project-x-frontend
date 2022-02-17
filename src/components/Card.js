@@ -10,7 +10,7 @@ class Card extends Component {
         return (
             <div className="card bg-secondary text-white rounded col-lg-2 col-12 col-md-12 d-flex align-content-center" id={'card' + this.props.info.id}>
                 <Header firstName={this.props.info.firstName} lastName={this.props.info.lastName} />
-                <Body email={this.props.info.username} />
+                <Body email={this.props.info.customerUsername} />
                 <Footer cardID={'card' + this.props.info.id} student = {this.props.info} studentID={this.props.info.id} handleDelete={this.props.handleDelete} handleUpdate={this.props.handleUpdate} />
             </div>
 
@@ -31,7 +31,7 @@ function Body(props) {
         <div className="card-body">
             <img src={props.url} alt={props.imgAlt} />
             <div className="container">
-                <p><b>Username:</b> {props.email}</p>
+                <p><b>Username:</b> {props.customerUsername}</p>
             </div>
         </div>
     );
