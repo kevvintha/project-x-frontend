@@ -52,7 +52,7 @@ export function createCustomer(customer) {
 }
 
 export function updateCustomer(customer) {
-  console.log('in the upate service');
+  console.log('in the update service');
   return axios.put(`${baseurl}/api/update/customer`, customer);
 }
 
