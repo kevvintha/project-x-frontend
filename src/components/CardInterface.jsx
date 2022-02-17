@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteCustomer, updateCustomer } from '../service/StudentService';
+import { deleteProduct, updateProduct } from '../service/StudentService';
 import CardLayout from "./CardLayout";
 
 // Card Interface Contains All Card Rendering, Grouping, Functions, and Modals
@@ -11,14 +11,14 @@ function CardInterface(props) {
     if (ok === true) {
       var removeCard = document.getElementById('card' + id);
       removeCard.parentNode.removeChild(removeCard);
-      deleteCustomer(id);
+      deleteProduct(id);
       window.alert('Customer has been deleted');
     }
   }
 
   // Update Student Card
-  const handleUpdate = (customer) => {
-    updateCustomer(customer);
+  const handleUpdate = (product) => {
+    updateProduct(product);
   }
 
   // Render the Cards and the Modals - one for Search mode and one for regular.

@@ -9,9 +9,9 @@ export const useFetch = (searchMethod, searchValue) => {
 
   if (searchValue !== undefined) param = searchValue;
 
-  const getAll = `${baseurl}/api/customers`;
-  const getById = `${baseurl}/api/customers/` + param;
-  const search = `${baseurl}/api/customers/search/` + param;
+  const getAll = `${baseurl}/api/product`;
+  const getById = `${baseurl}/api/product/` + param;
+  const search = `${baseurl}/api/product/search/` + param;
   let url = null;
 
   switch (searchMethod) {
@@ -47,17 +47,17 @@ export const useFetch = (searchMethod, searchValue) => {
   return { loading, data };
 };
 
-export function createCustomer(customer) {
-  return axios.post(`${baseurl}/api/add/customer`, customer);
+export function createProduct(product) {
+  return axios.post(`${baseurl}/api/product/add`, product);
 }
 
-export function updateCustomer(customer) {
+export function updateProduct(product) {
   console.log('in the update service');
-  return axios.put(`${baseurl}/api/update/customer`, customer);
+  return axios.put(`${baseurl}/api/product/update`, product);
 }
 
-export function deleteCustomer(id) {
-  return axios.delete(`${baseurl}/api/customer/delete/` + id);
+export function deleteProduct(id) {
+  return axios.delete(`${baseurl}/api/product/delete/` + id);
 }
 
 

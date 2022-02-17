@@ -35,13 +35,13 @@ function CardLayout(props) {
       {data && data.length > 0 &&
         makeDecks(data, 4).map((deck, idx) => (
           <div key={idx} className='card-deck container-fluid pt-3 row'>
-            {deck.map((customer, idx) => <Card key={customer.id} info={customer} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />)}
+            {deck.map((product, idx) => <Card key={product.id} info={product} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />)}
           </div>))
       }
       {data && !Array.isArray(data) && data['firstName'] !== 'N/A' &&
         typeof data == 'object' && <Card info={data} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />
       }
-      {(data === false || data['firstName'] === 'N/A' || data.length === 0) && <h1>Nothing found to matches that search...</h1>}
+      {(data === false || data['productName'] === 'N/A' || data.length === 0) && <h1>Nothing found to matches that search...</h1>}
       {props.search &&
         <button className='btn btn-info pt-3' onClick={handleBack}>Back to Main</button>
       }

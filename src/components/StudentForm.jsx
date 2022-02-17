@@ -6,11 +6,13 @@ class StudentForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: props.customer.id,
-            customerUsername: props.customer.customerUsername,
-            customerPassword: props.customer.customerPassword,
-            firstName: props.customer.firstName,
-            lastName: props.customer.lastName
+            productID: props.product.productID,
+            productName: props.product.productName,
+            productPrice: props.product.price,
+            productCategory: props.product.category,
+            productDescription: props.product.description,
+            productQuantity: props.product.quantity,
+            merchantID: props.product.merchantID
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,34 +34,44 @@ class StudentForm extends Component {
         return (
             <div>
                 <div className="form-style">
-                    {this.state.id && <h3>{'Changes for ' + this.state.firstName + ' ' + this.state.lastName}</h3>}
+                    {this.state.id && <h3>{'Changes for ' + this.state.productName + ' '}</h3>}
                     <form onSubmit={this.handleSubmit}>
                         <div className='row d-inline-flex'>
 
                         <div className="form-group col">
-                                <label >Customer ID:</label>
-                                <input type="text" name="id" className="form-control" id="id" value={this.state.id} onChange={this.handleChange} required />
+                                <label >Product ID:</label>
+                                <input type="text" name="id" className="form-control" id="id" value={this.state.productID} onChange={this.handleChange} required />
                             </div>
 
                             <div className="form-group col">
-                                <label >First Name:</label>
-                                <input type="text" name="firstName" className="form-control" id="firstName" value={this.state.firstName} onChange={this.handleChange} required />
+                                <label >Product Name:</label>
+                                <input type="text" name="productName" className="form-control" id="productName" value={this.state.productName} onChange={this.handleChange} required />
                             </div>
 
                             <div className="form-group col">
-                                <label >Last Name:</label>
-                                <input type="text" name="lastName" className="form-control" id="lastName" value={this.state.lastName} onChange={this.handleChange} required />
+                                <label >Price:</label>
+                                <input type="number" name="productPrice" className="form-control" id="productPrice" value={this.state.price} onChange={this.handleChange} required />
                             </div>
                         </div>
 
                         <div className="form-group">
-                            <label >Username:</label>
-                            <input type="text" name="customerUsername" className="form-control" id="customerUsername" value={this.state.username} onChange={this.handleChange} required />
+                            <label >Category:</label>
+                            <input type="text" name="productCategory" className="form-control" id="productCategory" value={this.state.category} onChange={this.handleChange} required />
                         </div>
 
                         <div className="form-group">
-                            <label >Password:</label>
-                            <input type="password" name="customerPassword" className="form-control" id="customerPassword" value={this.state.password} onChange={this.handleChange} required />
+                            <label >Description:</label>
+                            <input type="text" name="productDescription" className="form-control" id="productDescription" value={this.state.description} onChange={this.handleChange} required />
+                        </div>
+
+                        <div className="form-group">
+                            <label >Quantity:</label>
+                            <input type="text" name="productQuantity" className="form-control" id="productQuantity" value={this.state.quantity} onChange={this.handleChange} required />
+                        </div>
+
+                        <div className="form-group">
+                            <label >Merchant ID:</label>
+                            <input type="text" name="merchantID" className="form-control" id="merchantID" value={this.state.merchantID} onChange={this.handleChange} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-primary" />
