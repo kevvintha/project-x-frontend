@@ -8,10 +8,10 @@ class Card extends Component {
     render() {
 
         return (
-            <div className="card bg-secondary text-white rounded col-lg-2 col-12 col-md-12 d-flex align-content-center" id={'card' + this.props.info.id}>
+            <div className="card bg-secondary text-white rounded col-lg-2 col-12 col-md-12 d-flex align-content-center" id={'card' + this.props.info.productID}>
                 <Header productName={this.props.info.productName} />
                 <Body description={this.props.info.description} productPrice={this.props.info.price} productID={this.props.info.productID}/>
-                <Footer cardID={'card' + this.props.info.id} product = {this.props.info} productID={this.props.info.id} handleDelete={this.props.handleDelete} 
+                <Footer cardID={'card' + this.props.info.id} product = {this.props.info} productID={this.props.info.productID} handleDelete={this.props.handleDelete} 
                 handleUpdate={this.props.handleUpdate} />
             </div>
 

@@ -7,12 +7,12 @@ function CardInterface(props) {
 
   // Delete Customer Card
   const handleDelete = (id) => {
-    let ok = window.confirm('Are you sure you wish to delete this customer?\nPress "Ok" to confirm');
+    let ok = window.confirm('Are you sure you wish to delete this product?\nPress "Ok" to confirm');
     if (ok === true) {
       var removeCard = document.getElementById('card' + id);
       removeCard.parentNode.removeChild(removeCard);
       deleteProduct(id);
-      window.alert('Customer has been deleted');
+      window.alert('product has been deleted');
     }
   }
 
