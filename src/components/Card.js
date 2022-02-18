@@ -10,8 +10,8 @@ class Card extends Component {
         return (
             <div className="card bg-secondary text-white rounded col-lg-2 col-12 col-md-12 d-flex align-content-center" id={'card' + this.props.info.id}>
                 <Header productName={this.props.info.productName} />
-                <Body productDescription={this.props.info.description} productPrice={this.props.info.price} productID={this.props.info.productID}/>
-                <Footer cardID={'card' + this.props.info.id} product = {this.props.info} productid={this.props.info.id} handleDelete={this.props.handleDelete} 
+                <Body description={this.props.info.description} productPrice={this.props.info.price} productID={this.props.info.productID}/>
+                <Footer cardID={'card' + this.props.info.id} product = {this.props.info} productID={this.props.info.id} handleDelete={this.props.handleDelete} 
                 handleUpdate={this.props.handleUpdate} />
             </div>
 
@@ -31,7 +31,7 @@ function Body(props) {
     return (
         <div className="card-body">
             <div className="container">
-                <p><b>Description: {props.productDescription}</b></p>
+                <p><b>Description: {props.description}</b></p>
                 <p><b>Price: {props.productPrice}</b></p>
                 <p><b>Product ID: {props.productID}</b></p>
             </div>
@@ -43,7 +43,7 @@ function Body(props) {
 function Footer(props) {
     return (
         <div className="card-footer btn-group">
-            <button className="btn btn-danger" onClick={props.handleDelete.bind(this, props.productid)}>DELETE</button>
+            <button className="btn btn-danger" onClick={props.handleDelete.bind(this, props.productID)}>DELETE</button>
             <FormModal type='update' product={props.product} handleUpdate={props.handleUpdate}/>
         </div>
     );

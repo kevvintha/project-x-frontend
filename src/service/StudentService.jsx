@@ -9,9 +9,9 @@ export const useFetch = (searchMethod, searchValue) => {
 
   if (searchValue !== undefined) param = searchValue;
 
-  const getAll = `${baseurl}/api/product`;
-  const getById = `${baseurl}/api/product/` + param;
-  const search = `${baseurl}/api/product/search/` + param;
+  const getAll = `${baseurl}/api/products`;
+  const getById = `${baseurl}/api/products/` + param;
+  const search = `${baseurl}/api/products/search/` + param;
   let url = null;
 
   switch (searchMethod) {
@@ -56,8 +56,8 @@ export function updateProduct(product) {
   return axios.put(`${baseurl}/api/product/update`, product);
 }
 
-export function deleteProduct(id) {
-  return axios.delete(`${baseurl}/api/product/delete/` + id);
+export function deleteProduct(productID) {
+  return axios.delete(`${baseurl}/api/product/delete/` + productID);
 }
 
 

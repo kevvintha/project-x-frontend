@@ -8,11 +8,10 @@ class StudentForm extends Component {
         this.state = {
             productID: props.product.productID,
             productName: props.product.productName,
-            productPrice: props.product.price,
-            productCategory: props.product.category,
-            productDescription: props.product.description,
-            productQuantity: props.product.quantity,
-            merchantID: props.product.merchantID
+            price: props.product.productPrice,
+            category: props.product.productCategory,
+            description: props.product.productDescription,
+            quantity: props.product.productQuantity
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +39,7 @@ class StudentForm extends Component {
 
                         <div className="form-group col">
                                 <label >Product ID:</label>
-                                <input type="text" name="id" className="form-control" id="id" value={this.state.productID} onChange={this.handleChange} required />
+                                <input type="text" name="productID" className="form-control" id="productID" value={this.state.productID} onChange={this.handleChange} required />
                             </div>
 
                             <div className="form-group col">
@@ -50,28 +49,23 @@ class StudentForm extends Component {
 
                             <div className="form-group col">
                                 <label >Price:</label>
-                                <input type="number" name="productPrice" className="form-control" id="productPrice" value={this.state.price} onChange={this.handleChange} required />
+                                <input type="number" step="0.01" name="price" className="form-control" id="price" value={this.state.price} onChange={this.handleChange} required />
                             </div>
                         </div>
 
                         <div className="form-group">
                             <label >Category:</label>
-                            <input type="text" name="productCategory" className="form-control" id="productCategory" value={this.state.category} onChange={this.handleChange} required />
+                            <input type="text" name="category" className="form-control" id="category" value={this.state.category} onChange={this.handleChange} required />
                         </div>
 
                         <div className="form-group">
                             <label >Description:</label>
-                            <input type="text" name="productDescription" className="form-control" id="productDescription" value={this.state.description} onChange={this.handleChange} required />
+                            <input type="text" name="description" className="form-control" id="description" value={this.state.description} onChange={this.handleChange} required />
                         </div>
 
                         <div className="form-group">
                             <label >Quantity:</label>
-                            <input type="text" name="productQuantity" className="form-control" id="productQuantity" value={this.state.quantity} onChange={this.handleChange} required />
-                        </div>
-
-                        <div className="form-group">
-                            <label >Merchant ID:</label>
-                            <input type="text" name="merchantID" className="form-control" id="merchantID" value={this.state.merchantID} onChange={this.handleChange} required />
+                            <input type="text" name="quantity" className="form-control" id="quantity" value={this.state.quantity} onChange={this.handleChange} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-primary" />
